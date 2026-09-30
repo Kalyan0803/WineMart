@@ -4,8 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WineMart.Data;
+using WineMart.Repositories;
+using WineMart.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Registering Services
+
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 // 1. Add DbContext
 builder.Services.AddDbContext<WineMartDbContext>(options =>
