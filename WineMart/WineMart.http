@@ -1,0 +1,6 @@
+@WineMart_HostAddress = http://localhost:5114
+
+GET {{WineMart_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
